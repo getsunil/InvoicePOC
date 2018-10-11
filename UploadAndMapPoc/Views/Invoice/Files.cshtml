@@ -1,0 +1,34 @@
+﻿@model UploadAndMapPoc.Models.UploadedFilesViewModel
+
+@{
+    ViewData["Title"] = "Files";
+}
+
+<h2>Files</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>File Names</th>
+            <th>Invoice Number</th>
+            <th>Order Id</th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.InvoiceFiles) {
+        <tr>
+            <td>
+                @item.FileName
+                @*@Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+                @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+            </td>
+            <td>
+                @item.InvoiceNumber
+            </td>
+            <td>
+                @item.OrderIds
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
